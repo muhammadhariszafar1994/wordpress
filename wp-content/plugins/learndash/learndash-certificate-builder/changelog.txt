@@ -1,0 +1,13 @@
+= [1.1.2] =
+
+* Tweak - Added the ability to filter the blocks that can be used within the certificate builder.
+* Tweak - Added filters: `learndash_certificate_builder_allowed_blocks`, `learndash_certificate_builder_block_fallback`.
+
+= [1.1.1] =
+
+* Fix = Resolved missing blocks on widgets block editor page.
+
+= [1.1.0] =
+
+* Fix - Resolved fatal error related to non-prefixed Composer dependencies
+* Tweak - Added actions: `learndash_certificate_builder_uninstall`.

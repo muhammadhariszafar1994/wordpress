@@ -1,0 +1,215 @@
+# Copyright (C) 2024 LearnDash
+# This file is distributed under the same license as the LearnDash LMS - ThriveCart Integration plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: LearnDash LMS - ThriveCart Integration 1.0.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/learndash-thrivecart\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-04-12T21:11:49+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: learndash-thrivecart\n"
+
+#. Plugin Name of the plugin
+#: learndash-thrivecart.php
+msgid "LearnDash LMS - ThriveCart Integration"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: learndash-thrivecart.php
+msgid "http://www.learndash.com/"
+msgstr ""
+
+#. Description of the plugin
+#: learndash-thrivecart.php
+msgid "Integrate Thrivecart with LearnDash."
+msgstr ""
+
+#. Author of the plugin
+#: learndash-thrivecart.php
+msgid "LearnDash"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:23
+msgid "LearnDash Thrivecart Settings"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:24
+#: includes/admin/class-settings-section.php:34
+#: includes/admin/settings/class-settings.php:114
+#: includes/class-thrivecart-product.php:88
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-settings-section-submit.php:25
+msgid "Save Options"
+msgstr ""
+
+#: includes/admin/class-settings-section-submit.php:45
+msgid "Save"
+msgstr ""
+
+#: includes/admin/class-settings-section.php:76
+msgid "Secret Word"
+msgstr ""
+
+#: includes/admin/class-settings-section.php:77
+msgid "Secret word from your ThriveCart account. You can get it from your account under Settings > API & Webhooks > ThriveCart API."
+msgstr ""
+
+#: includes/admin/class-settings-section.php:83
+msgid "Webhook URL"
+msgstr ""
+
+#: includes/admin/class-settings-section.php:84
+msgid "URL that you need to paste into your Thrivecart account webhook URL setting."
+msgstr ""
+
+#: includes/admin/class-settings-section.php:96
+msgid "Partial Refund Behavior"
+msgstr ""
+
+#: includes/admin/class-settings-section.php:97
+msgid "Behavior you want to happen when a user makes a partial refund. The default is to remove the user access from associated courses and groups."
+msgstr ""
+
+#: includes/admin/class-settings-section.php:99
+msgid "Remove user access from associated courses and groups"
+msgstr ""
+
+#: includes/admin/class-settings-section.php:100
+msgid "Keep user access to associated courses and groups"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:58
+msgid "LearnDash plugin is required to activate LearnDash Thrivecart add-on plugin. Please activate it first."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:94
+#: includes/admin/settings/class-settings.php:125
+msgid "Add New"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:104
+#: includes/admin/settings/class-settings.php:135
+#: includes/class-translations-ld-thrivecart.php:45
+msgid "LearnDash Thrivecart"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:155
+msgid "Thrivecart"
+msgstr ""
+
+#: includes/class-thrivecart-integration.php:73
+#: includes/class-thrivecart-product.php:111
+msgid "Cheatin' huh?"
+msgstr ""
+
+#: includes/class-thrivecart-integration.php:115
+msgid "Success."
+msgstr ""
+
+#: includes/class-thrivecart-integration.php:117
+msgid "There's no purchase in your transaction."
+msgstr ""
+
+#. translators: 1$: Product title, 2$: user email.
+#: includes/class-thrivecart-integration.php:405
+msgid "Product %1$s Refunded By %2$s via Thrivecart"
+msgstr ""
+
+#. translators: 1$: Product title, 2$: user email.
+#: includes/class-thrivecart-integration.php:405
+msgid "Product %1$s Purchased By %2$s via Thrivecart"
+msgstr ""
+
+#: includes/class-thrivecart-integration.php:457
+msgid "Thrivecart secret word is not set up on this site. Please contact website administrator."
+msgstr ""
+
+#: includes/class-thrivecart-product.php:39
+#: includes/class-thrivecart-product.php:50
+msgid "Thrivecart Products"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:40
+msgid "Thrivecart Product"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:41
+msgctxt "learndash-thrivecart"
+msgid "Add New Thrivecart Product"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:42
+msgid "Add New Thrivecart Product"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:43
+msgid "Edit Thrivecart Product"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:44
+msgid "New Thrivecart Product"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:45
+msgid "View Thrivecart Product"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:46
+msgid "Search Thrivecart Products"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:47
+msgid "No Thrivecart Products found"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:48
+msgid "No Thrivecart Products found in Trash"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:49
+msgid "Parent Thrivecart Product:"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:56
+msgid "Thrivecart products associated with a Thrivecart account."
+msgstr ""
+
+#: includes/class-thrivecart-product.php:194
+msgid "Thrivecart Product ID"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:195
+msgid "Unique Thrivecart product ID that you have created in your Thrivecart account."
+msgstr ""
+
+#: includes/class-thrivecart-product.php:198
+msgid "Associated Courses"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:199
+msgid "Course(s) you want to associate with Thrivecart product. Press ctrl on Windows or cmd on Mac to select or deselect multiple courses."
+msgstr ""
+
+#: includes/class-thrivecart-product.php:202
+msgid "Associated Groups"
+msgstr ""
+
+#: includes/class-thrivecart-product.php:203
+msgid "Group(s) you want to associate with Thrivecart product. Press ctrl on Windows or cmd on Mac to select or deselect multiple groups."
+msgstr ""
+
+#: learndash-thrivecart.php:46
+msgid "LearnDash LMS - ThriveCart Integration add-on requires the following plugin(s) be active:"
+msgstr ""
+
+#: src/deprecated/LearnDash_Thrivecart.php:129
+msgid "LearnDash LMS - Thrivecart Integration Add-on requires the following plugin(s) to be active:"
+msgstr ""

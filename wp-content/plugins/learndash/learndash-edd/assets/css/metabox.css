@@ -1,0 +1,39 @@
+body .edd_variable_prices_wrapper .learndash-options {
+    display: block;
+}
+
+body .edd_learndash_field_wrapper {
+    margin-bottom: 20px;
+}
+
+body .edd_learndash_field_wrapper > label {
+    display: block;
+}
+
+body .edd_learndash_field_wrapper .select2-search {
+   min-width: 180px;
+}
+
+body .edd_learndash_field_wrapper .select2-search > input {
+    width: 100% !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-field .chosen-search-input {
+    float: left;
+    clear: both;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+body .edd-select-chosen {
+    max-width: 100%;
+    width: 100% !important;
+}
+
+.select2-results__options li {
+    margin: 0;
+}

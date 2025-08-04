@@ -1,0 +1,16 @@
+= [1.1.0] =
+
+* Feature - Added Lifter LMS migration support.
+* Tweak - Moved main plugin files from the `src/Migration` folder to the `src/App` folder.
+* Tweak - Added actions: `learndash_migration_uninstall`.
+
+= [1.0.1] =
+
+* Deprecate - Classes: `LearnDash\Migration\Container`, `LearnDash\Migration\App`.
+* Tweak - Added compatibility with LearnDash Core v4.13.0.
+* Tweak - Updated functions: `learndash_migration_extra_autoloading`.
+
+= [1.0.0] =
+
+* Tweak - Added filters: `learndash_migration_integration_classes`, `learndash_migration_format_settings`, `learndash_migration_format_meta`, `learndash_migration_new_course_url`.
+* Tweak - Added functions: `learndash_migration_extra_autoloading`.

@@ -1,0 +1,39 @@
+# This is a sample build configuration for PHP.
+# Check our guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment. https://hub.docker.com/r/dockunit/prebuilt-images/tags/
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Unit Tests
+            image: php:7.2.34-cli
+            script: # Modify the commands below to build your repository.
+              - mkdir -p ~/.ssh
+              - composer install --ignore-platform-reqs
+              - service mysql start
+              - bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
+              - phpunit
+        - step:
+            name: Build Packages
+            image: node:12.15.0
+            caches:
+              - node
+            script:
+              - apt-get update && apt-get install -y jq
+              - apt install -y php
+              - apt install gettext -y
+              - wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
+              - export TERM=xterm
+              - npm install -g sass
+              - npm install
+              - php composer.phar install --no-dev --ignore-platform-reqs
+              - ./node_modules/.bin/grunt
+              - declare -x VERSION=$(jq -r '.version' package.json)
+              - pipe: atlassian/bitbucket-upload-file:0.1.5
+                variables:
+                  BITBUCKET_USERNAME: $BITBUCKET_USERNAME
+                  BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+                  FILENAME: "$BITBUCKET_CLONE_DIR/zip/wp-defender-$VERSION.zip"

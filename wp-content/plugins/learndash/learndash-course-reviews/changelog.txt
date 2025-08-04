@@ -1,0 +1,12 @@
+= [1.0.2] =
+
+* Fix - Fixed excessive closing div tag in template.
+* Tweak - Updated template: `src/views/reviews-reply.php`
+
+= [1.0.1] =
+
+* Fix - Issue where non-admins could be unable to submit a review.
+
+= [1.0.0] =
+
+* Initial release

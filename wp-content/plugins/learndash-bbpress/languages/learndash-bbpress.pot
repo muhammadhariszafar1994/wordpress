@@ -1,0 +1,105 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: LearnDash LMS - bbPress Integration\n"
+"POT-Creation-Date: 2021-11-25 10:15+0800\n"
+"PO-Revision-Date: 2021-11-25 10:14+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: learndash-bbpress.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: learndash-bbpress.php:82
+msgid ""
+"LearnDash LMS - bbPress Add-on requires the following plugin(s) to be active:"
+msgstr ""
+
+#: learndash-bbpress.php:133
+msgid "Click to select"
+msgstr ""
+
+#: learndash-bbpress.php:149
+msgid "LearnDash bbPress Settings"
+msgstr ""
+
+#: learndash-bbpress.php:164
+msgid ""
+"This forum is restricted to members of the associated course(s) and group(s)."
+msgstr ""
+
+#: learndash-bbpress.php:183
+msgid "Associated Course(s)"
+msgstr ""
+
+#: learndash-bbpress.php:199
+msgid "Associated Group(s)"
+msgstr ""
+
+#: learndash-bbpress.php:216
+msgid "Post Limit Access"
+msgstr ""
+
+#: learndash-bbpress.php:218
+msgid "All"
+msgstr ""
+
+#: learndash-bbpress.php:219
+msgid "Any"
+msgstr ""
+
+#: learndash-bbpress.php:221
+msgid ""
+"If you select ALL, then users must have access to all of the associated "
+"courses and groups in order to post."
+msgstr ""
+
+#: learndash-bbpress.php:222
+msgid ""
+"If you select ANY, then users only need to have access to any one of the "
+"selected courses or groups in order to post."
+msgstr ""
+
+#: learndash-bbpress.php:227
+msgid "Message shown to users without access"
+msgstr ""
+
+#: learndash-bbpress.php:234
+msgid "Forum View"
+msgstr ""
+
+#: learndash-bbpress.php:238
+msgid ""
+"Check this box to allow non-enrolled users to view forum threads and topics "
+"(they will not be able to post replies)."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "LearnDash LMS - bbPress Integration"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://www.learndash.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"LearnDash integration with the bbPress plugin that allows to create private "
+"forums for user's enrolled to a course."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "LearnDash"
+msgstr ""

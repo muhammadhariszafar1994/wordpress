@@ -1,0 +1,21 @@
+= [2.2.4] =
+
+* Security - Improve security for `ld_bbpress_forum_objects` shortcode.
+
+= [2.2.3] =
+
+* Fix - Forum widget no longer lists all forums when on a quiz page.
+* Fix - Invalid supplied argument error when using Forum Course widget.
+
+= [2.2.2] =
+
+* Fixed - Setting field labels don't point to their fields.
+* Fixed - Various formatting and improved variable names.
+* Fixed - Forum access check logic.
+* Fixed - Custom message on topic page doesn't allow forum setting.
+
+= [2.2.0] =
+
+* Added - LearnDash Group support.
+* Tweak - Post limit message for group.
+* Fix - Undefined error notices.

@@ -1,0 +1,37 @@
+.ld-edd-retroactive-tool-notice {
+    margin-top: 10px !important;
+    font-style: italic !important;
+}
+
+.ld-edd-retroactive-tool-status {
+    padding-left: 10px !important;
+    line-height: 2.3em !important;
+    float: left;
+}
+
+.ld-edd-retroactive-tool {
+    float: left;
+}
+
+.ld-edd-retroactive-tool.in-progress {
+    display: flex;
+    align-items: center;
+}
+
+.ld-edd-retroactive-tool.in-progress span.loader {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 100% !important;
+    border: 2px solid #333 !important;
+    border-color: #333 transparent #333 transparent !important;
+    animation: in-progress 1.2s linear infinite !important;
+}
+
+@keyframes in-progress {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

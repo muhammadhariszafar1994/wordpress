@@ -1,0 +1,15 @@
+= 1.4.0 =
+
+* Feature: add support for EDD pro.
+* Feature: add variable pricing support for LearnDash course and group enrollment.
+* Tweak: change course and group selector select fields to select2.
+* Tweak: add EDD settings section on LD advanced settings page.
+* Feature: add retroactive tool based on EDD purchase and subscription.
+* Feature: add subscription completed handler and filter hook that allows access removal.
+* Fix: users don't get access to LD course/group after completing purchase using unregistered user.
+* Fix: variable product course selector doesn't work because of selector change in EDD 3.0.
+* Feature: add user cancelled subscription check for expired subscription.
+* Tweak: add backward compatiblity with LD EDD <= 1.3.0 for variable products.
+* Feature: add subscription failing hook handler.
+* Fix: fix course access is given on any subscription update action.
+* Tweak: add compatibility with EDD free downloads extension.

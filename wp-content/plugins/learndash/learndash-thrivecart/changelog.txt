@@ -1,0 +1,19 @@
+= [1.0.3] =
+
+* Deprecate - Classes: `LearnDash\Elementor\Container`, `LearnDash\Elementor\App`.
+* Tweak - Added compatibility with LearnDash Core v4.13.0.
+* Tweak - Updated functions: `learndash_thrivecart_extra_autoloading`.
+
+= [1.0.2] =
+
+* Feature - Add setting to allow user to set partial refund behavior.
+* Fix - Remove access when subscription ends, not when cancelled.
+
+= [1.0.1] =
+
+* Fix - Update `learndash_thrivecart_after_create_user` action to include $password argument.
+* Tweak - Added `learndash_thrivecart_process_webhook` filter.
+
+= [1.0.0] =
+
+* Initial release

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "learndash-notifications",
+			"path": "."
+		},
+		{
+			"name": "sfwd-lms",
+			"path": "../sfwd-lms"
+		},
+		{
+			"name": "learndash",
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

@@ -1,0 +1,163 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: LearnDash LMS - Samcart Integration\n"
+"POT-Creation-Date: 2020-11-30 14:25+0700\n"
+"PO-Revision-Date: 2020-11-30 14:25+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: learndash-samcart.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: includes/admin/settings/class-settings.php:51
+msgid ""
+"LearnDash plugin is required to activate LearnDash Samcart add-on plugin. "
+"Please activate it first."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:83
+msgid "Samcart"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:103
+msgid "Add New"
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:110
+#: includes/class-samcart-product.php:28 includes/class-samcart-product.php:39
+msgid "Samcart Products"
+msgstr ""
+
+#: includes/class-samcart-integration.php:77
+#, php-format
+msgid ""
+"No LearnDash Samcart product with product ID: %d. Please create it first."
+msgstr ""
+
+#: includes/class-samcart-integration.php:124
+#, php-format
+msgid "Product %s Purchased By %s via Samcart"
+msgstr ""
+
+#: includes/class-samcart-product.php:29
+msgid "Samcart Product"
+msgstr ""
+
+#: includes/class-samcart-product.php:30
+msgctxt "learndash-samcart"
+msgid "Add New Samcart Product"
+msgstr ""
+
+#: includes/class-samcart-product.php:31
+msgid "Add New Samcart Product"
+msgstr ""
+
+#: includes/class-samcart-product.php:32
+msgid "Edit Samcart Product"
+msgstr ""
+
+#: includes/class-samcart-product.php:33
+msgid "New Samcart Product"
+msgstr ""
+
+#: includes/class-samcart-product.php:34
+msgid "View Samcart Product"
+msgstr ""
+
+#: includes/class-samcart-product.php:35
+msgid "Search Samcart Products"
+msgstr ""
+
+#: includes/class-samcart-product.php:36
+msgid "No Samcart Products found"
+msgstr ""
+
+#: includes/class-samcart-product.php:37
+msgid "No Samcart Products found in Trash"
+msgstr ""
+
+#: includes/class-samcart-product.php:38
+msgid "Parent Samcart Product:"
+msgstr ""
+
+#: includes/class-samcart-product.php:45
+msgid "Samcart products associated with a Samcart account."
+msgstr ""
+
+#: includes/class-samcart-product.php:71
+msgid "Settings"
+msgstr ""
+
+#: includes/class-samcart-product.php:84
+msgid "Cheatin' huh?"
+msgstr ""
+
+#: includes/class-samcart-product.php:120
+msgid "Click for Help!"
+msgstr ""
+
+#: includes/class-samcart-product.php:151
+msgid "Samcart Product ID"
+msgstr ""
+
+#: includes/class-samcart-product.php:152
+msgid ""
+"Unique Samcart product ID that you have created in your Samcart account."
+msgstr ""
+
+#: includes/class-samcart-product.php:155
+msgid "Associated Courses"
+msgstr ""
+
+#: includes/class-samcart-product.php:156
+msgid ""
+"Course(s) you want to associate with Samcart product. Press ctrl to select "
+"multiple courses."
+msgstr ""
+
+#: includes/class-samcart-product.php:159
+msgid "Notification URL"
+msgstr ""
+
+#: includes/class-samcart-product.php:160
+msgid "URL that you need to paste into your Samcart product notification URL."
+msgstr ""
+
+#: includes/class-translations-ld-samcart.php:16
+msgid "LearnDash Samcart"
+msgstr ""
+
+#: learndash-samcart.php:137
+msgid ""
+"LearnDash LMS - Samcart Integration Add-on requires the following plugin(s) "
+"to be active:"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "LearnDash LMS - Samcart Integration"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://www.learndash.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Integrate Samcart with LearnDash."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "LearnDash"
+msgstr ""

@@ -1,0 +1,18 @@
+= [1.2.0] =
+
+* Fix - Allow pasting in password input fields when content copy protection enabled
+* Fix - Allow recaptcha to display on non-LD pages when using the Login menu item
+* Fix - Show recaptcha in login modal when used with LearnDash Login block
+* Tweak - Address PHP 8.2 warnings
+* Tweak - Updated recaptcha setup instructions
+
+= [1.1.0] =
+
+* Fix - Remove hotlinking protectiong from .htaccess file on plugin deactivation
+* Fix - Remove login transients when clearing session from user profile
+* Fix - Display of recaptcha element
+* Tweak - Recaptcha setup instructions for clearer user experience
+
+= [1.0.0] =
+
+* Initial release

@@ -1,0 +1,102 @@
+# Copyright (C) 2024 LearnDash
+# This file is distributed under the same license as the LearnDash LMS - Migration plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: LearnDash LMS - Migration 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/learndash-migration\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-06-28T17:38:42+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: learndash-migration\n"
+
+#. Plugin Name of the plugin
+#: learndash-migration.php
+#: src/App/Admin/Translation.php:51
+msgid "LearnDash LMS - Migration"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: learndash-migration.php
+msgid "https://www.learndash.com/"
+msgstr ""
+
+#. Description of the plugin
+#: learndash-migration.php
+msgid "Migrate from other LMS platform to LearnDash with a few clicks."
+msgstr ""
+
+#. Author of the plugin
+#: learndash-migration.php
+msgid "LearnDash"
+msgstr ""
+
+#: learndash-migration.php:50
+msgid "LearnDash LMS - Migration add-on requires the following plugin(s) be active:"
+msgstr ""
+
+#: src/App/Admin/Settings_Section.php:54
+#: src/App/Admin/Settings_Section.php:55
+msgid "Migration"
+msgstr ""
+
+#. Translators: courses label.
+#: src/App/Admin/Settings_Section.php:59
+msgid "Migrate %s data from other LMS platforms to LearnDash."
+msgstr ""
+
+#: src/App/Admin/Settings_Section.php:85
+msgid "Available Integrations"
+msgstr ""
+
+#: src/App/Admin/Settings_Section.php:96
+msgid "LMS"
+msgstr ""
+
+#: src/App/Admin/Settings_Section.php:97
+msgid "Source LMS the data will be migrated from."
+msgstr ""
+
+#. Translators: course label.
+#: src/App/Admin/Settings_Section.php:109
+msgid "Select the %s you want to migrate."
+msgstr ""
+
+#. Translators: course label.
+#: src/App/Admin/Settings_Section.php:148
+#: src/App/Admin/Settings_Section.php:235
+msgid "Migrate %s"
+msgstr ""
+
+#. Translators: course label.
+#: src/App/Admin/Settings_Section.php:240
+msgid "Select a %s"
+msgstr ""
+
+#. Translators: course label.
+#: src/App/Admin/Settings_Section.php:245
+msgid "Your %s is being migrated. Please wait a moment."
+msgstr ""
+
+#. Translators: 1$: course label, 2$: opening html tag, 3$: closing HTML tag, 4$: course label.
+#: src/App/Admin/Settings_Section.php:250
+msgid "Your %1$s has been successfully migrated. %2$sClick here%3$s to edit the %4$s."
+msgstr ""
+
+#: src/App/Admin/Settings_Section.php:256
+msgid "Please select an integration first."
+msgstr ""
+
+#. Translators: course label.
+#: src/App/Admin/Settings_Section.php:259
+msgid "Please select a %s first."
+msgstr ""
+
+#: src/App/Repository.php:338
+msgid "Fill in the blank the following statement"
+msgstr ""

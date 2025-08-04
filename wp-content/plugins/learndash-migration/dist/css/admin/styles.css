@@ -1,0 +1,48 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/assets/scss/admin/styles.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+/** Admin styles **/
+/* stylelint-disable selector-id-pattern, selector-class-pattern
+-- Legacy ID and class names. */
+#learndash_settings_migration_settings_migration #learndash_settings_migration_migrate_field .sfwd_option_div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#learndash_settings_migration_settings_migration #learndash_settings_migration_migrate_field .sfwd_option_div .status {
+  font-style: italic;
+}
+#learndash_settings_migration_settings_migration #learndash_settings_migration_migrate_field .sfwd_option_div .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+}
+#learndash_settings_migration_settings_migration #learndash_settings_migration_migrate_field .sfwd_option_div .loader::after {
+  content: " ";
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border-radius: 50%;
+  border: 2px solid #007cba;
+  border-color: #007cba transparent #007cba transparent;
+  animation: ld-migration-loader 1.2s linear infinite;
+}
+#learndash_settings_migration_settings_migration #learndash_settings_migration_course_field {
+  display: none;
+}
+
+.select2-selection--single .select2-selection__rendered {
+  line-height: 28px;
+}
+
+@keyframes ld-migration-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
