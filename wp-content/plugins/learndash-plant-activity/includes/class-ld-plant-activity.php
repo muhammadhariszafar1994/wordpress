@@ -99,9 +99,7 @@ if ( ! class_exists( 'LDLMS_Plant_Activity' ) ) {
 
         public static function handle_rest_request( WP_REST_Request $request ) {
             $data = $request->get_json_params();
-
-            // learndash_update_user_activity($data);
-                
+            
             return rest_ensure_response([
                 'success'  => true,
                 'message'  => 'Plant activity recorded',
