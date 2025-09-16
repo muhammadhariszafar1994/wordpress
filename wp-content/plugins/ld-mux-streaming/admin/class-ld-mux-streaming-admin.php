@@ -105,6 +105,19 @@ class LD_Mux_Streaming_Admin {
 		 * class.
 		 */
 
+        wp_enqueue_script(
+            'ld-mux-streaming-admin',
+            plugin_dir_url(__FILE__) . 'js/ld-mux-streaming-admin.js',
+            ['jquery'],
+            $this->version,
+            true
+        );
+
+        wp_localize_script('ld-mux-streaming-admin', 'ldMuxAjax', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce'    => wp_create_nonce('ld_mux_upload_video_nonce')
+        ]);
+
 	}
 
 	/**
@@ -126,16 +139,58 @@ class LD_Mux_Streaming_Admin {
      */
     public function display_plugin_admin_page() {
         ?>
-        <div class="wrap">
-            <h1><?php esc_html_e( 'LD Mux Streaming Settings', 'ld-mux-streaming' ); ?></h1>
-            <form method="post" action="options.php">
-                <?php
-                settings_fields( 'ld_mux_options' );
-                do_settings_sections( 'ld-mux-streaming' );
-                submit_button();
-                ?>
-            </form>
-        </div>
+            <!-- <div class="wrap">
+                <h1><?php //esc_html_e( 'LD Mux Streaming Settings', 'ld-mux-streaming' ); ?></h1>
+                <form method="post" action="options.php">
+                    <?php
+                        // settings_fields( 'ld_mux_options' );
+                        // do_settings_sections( 'ld-mux-streaming' );
+                        // submit_button();
+                    ?>
+                </form>
+            </div> -->
+
+            <div class="wrap">
+                <h1><?php esc_html_e( 'LD Mux Streaming Settings & Upload', 'ld-mux-streaming' ); ?></h1>
+
+                <!-- Credentials -->
+                <!-- <h2><?php //esc_html_e( 'Mux API Credentials', 'ld-mux-streaming' ); ?></h2> -->
+                <form method="post" action="options.php">
+                    <?php
+                    settings_fields( 'ld_mux_options' );
+                    do_settings_sections( 'ld-mux-streaming' );
+                    submit_button( __( 'Save Credentials', 'ld-mux-streaming' ) );
+                    ?>
+                </form>
+
+                <hr>
+
+                <form id="ld-mux-upload-form" enctype="multipart/form-data" method="post">
+                    <!-- <input type="hidden" name="action" value="ld_mux_upload_video"> -->
+                    <input type="hidden" id="video_nonce_field" name="ld_mux_upload_video_nonce_field" value="<?php echo wp_create_nonce('ld_mux_upload_video_nonce'); ?>">
+
+                    <table class="form-table">
+                        <tr>
+                            <th><label for="ld_mux_video_title"><?php esc_html_e( 'Title', 'ld-mux-streaming' ); ?></label></th>
+                            <td><input id="video_title" type="text" name="ld_mux_video_title" class="regular-text"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="ld_mux_video_desc"><?php esc_html_e( 'Description', 'ld-mux-streaming' ); ?></label></th>
+                            <td><textarea id="video_description" name="ld_mux_video_desc" rows="4" cols="50"></textarea></td>
+                        </tr>
+                        <tr>
+                            <th><label for="ld_mux_video_file"><?php esc_html_e( 'Video File', 'ld-mux-streaming' ); ?></label></th>
+                            <td><input id="video_file" type="file" name="ld_mux_video_file" accept="video/*" ></td>
+                        </tr>
+                    </table>
+
+                    <button type="submit" class="button button-primary"><?php esc_html_e( 'Upload to Mux', 'ld-mux-streaming' ); ?></button>
+                </form>
+
+                <div id="ld-mux-upload-response"></div>
+
+
+            </div>
         <?php
     }
 
@@ -179,7 +234,7 @@ class LD_Mux_Streaming_Admin {
 
     public function field_token_secret() {
         printf(
-            '<input type="password" name="ld_mux_token_secret" value="%s" class="regular-text" />',
+            '<input type="text" name="ld_mux_token_secret" value="%s" class="regular-text" />',
             esc_attr( get_option( 'ld_mux_token_secret' ) )
         );
     }
@@ -188,67 +243,141 @@ class LD_Mux_Streaming_Admin {
         return 'Basic ' . base64_encode($this->token_id . ':' . $this->token_secret);
     }
 
-    public function create_upload() {
-        $url = 'https://api.mux.com/video/v1/uploads';
-        $args = array(
-            'headers' => array(
-                'Authorization' => $this->auth_header(),
-                'Content-Type'  => 'application/json',
-            ),
-            'body' => json_encode(array(
-                'new_asset_settings' => array('playback_policy' => array('public'))
-            )),
-            'timeout' => 20,
-        );
-
-        $response = wp_remote_post($url, $args);
-
-        if (is_wp_error($response)) return $response;
-
-        $code = wp_remote_retrieve_response_code($response);
-        $body = wp_remote_retrieve_body($response);
-
-        if ($code < 200 || $code >= 300) {
-            return new WP_Error('mux_api_error', 'Mux API returned ' . $code, array('body' => $body));
+    public function upload_page_html() {
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
         }
+        $options = get_option( $this->option_name );
+        ?>
+            <div class="wrap">
+                <h1>Upload Video to Mux</h1>
 
-        return json_decode($body, true);
+                <form method="post" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" enctype="multipart/form-data">
+                    <?php
+                        settings_fields( 'ldMuxSettings' );
+                        do_settings_sections( 'ld_mux_upload' );
+                        submit_button( 'Save Credentials' );
+                    ?>
+
+                </form>
+
+                <hr>
+
+                <form method="post" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" enctype="multipart/form-data">
+                    <input type="hidden" name="action" value="ld_mux_upload_video">
+                    <?php wp_nonce_field( 'ld_mux_upload_video_nonce', 'ld_mux_upload_video_nonce_field' ); ?>
+
+                    <table class="form-table">
+                        <tr>
+                            <th><label for="ld_mux_video_file">Video File</label></th>
+                            <td><input type="file" name="ld_mux_video_file" required accept="video/*"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="ld_mux_video_title">Title</label></th>
+                            <td><input type="text" name="ld_mux_video_title" required></td>
+                        </tr>
+                        <tr>
+                            <th><label for="ld_mux_video_desc">Description</label></th>
+                            <td><textarea name="ld_mux_video_desc" rows="4" cols="50"></textarea></td>
+                        </tr>
+                    </table>
+
+                    <?php submit_button( 'Upload to Mux' ); ?>
+                </form>
+            </div>
+        <?php
     }
 
-    public function ajax_get_upload_url() {
-        $result = $this->create_upload();
-        if ( is_wp_error($result) ) {
-            wp_send_json_error(array('message' => $result->get_error_message()));
-        }
-        wp_send_json_success($result);
-    }
+    public function handle_upload() {
+        try {
+            // 🔒 Security check
+            check_ajax_referer('ld_mux_upload_video_nonce', 'ld_mux_upload_video_nonce_field');
 
-    public function register_rest_routes() {
-        register_rest_route('ld-mux-streaming/v1', '/webhook', array(
-            'methods'  => 'POST',
-            'callback' => array($this, 'handle_webhook'),
-            'permission_callback' => '__return_true',
-        ));
-    }
-
-    public function handle_webhook($request) {
-        $payload = $request->get_json_params();
-        if (empty($payload)) return new WP_REST_Response(array('error'=>'no payload'), 400);
-
-        $type = $payload['type'] ?? '';
-        $data = $payload['data'] ?? array();
-
-        if ($type === 'video.asset.ready') {
-            $asset_id = $data['id'] ?? null;
-            $playback_ids = $data['playback_ids'] ?? null;
-
-            if ($asset_id) {
-                $saved = get_option('ld_mux_assets', array());
-                $saved[$asset_id] = $data;
-                update_option('ld_mux_assets', $saved);
+            if (!current_user_can('manage_options')) {
+                throw new Exception('Unauthorized user');
             }
-        }
 
-        return new WP_REST_Response(array('status'=>'ok'), 200);
+            // ✅ Validate file
+            if (empty($_FILES['ld_mux_video_file']['tmp_name'])) {
+                throw new Exception('No file uploaded');
+            }
+
+            $file  = $_FILES['ld_mux_video_file'];
+            $title = sanitize_text_field($_POST['ld_mux_video_title'] ?? '');
+            $desc  = sanitize_textarea_field($_POST['ld_mux_video_desc'] ?? '');
+
+            // 🔑 Get Mux credentials
+            $token  = get_option('ld_mux_token_id');
+            $secret = get_option('ld_mux_token_secret');
+
+            if (empty($token) || empty($secret)) {
+                throw new Exception('Mux credentials not set.');
+            }
+
+            // 1️⃣ Request a new Direct Upload
+            $url  = 'https://api.mux.com/video/v1/uploads';
+            $args = [
+                'headers' => [
+                    'Authorization' => 'Basic ' . base64_encode("{$token}:{$secret}"),
+                    'Content-Type'  => 'application/json',
+                ],
+                'body' => wp_json_encode([
+                    'new_asset_settings' => [
+                        'playback_policy' => ['public'],
+                        'passthrough'     => $title,
+                        'description'     => $desc,
+                    ],
+                    'cors_origin' => '*',
+                ]),
+            ];
+
+            $response = wp_remote_post($url, $args);
+
+            if (is_wp_error($response)) {
+                throw new Exception('Mux error: ' . $response->get_error_message());
+            }
+
+            $body = json_decode(wp_remote_retrieve_body($response), true);
+
+            if (empty($body['data']['url'])) {
+                throw new Exception('Mux did not return upload URL');
+            }
+
+            $upload_url = $body['data']['url'];
+
+            // 2️⃣ Upload the actual video to Mux
+            $filedata    = file_get_contents($file['tmp_name']);
+            $contentType = !empty($file['type']) ? $file['type'] : 'application/octet-stream';
+
+            $upload_response = wp_remote_request($upload_url, [
+                'method'  => 'PUT',
+                'headers' => [
+                    'Content-Type' => $contentType,
+                ],
+                'body'    => $filedata,
+                'timeout' => 600,
+            ]);
+
+            if (is_wp_error($upload_response)) {
+                throw new Exception('Upload failed: ' . $upload_response->get_error_message());
+            }
+
+            $status_code = wp_remote_retrieve_response_code($upload_response);
+            if ($status_code !== 200) {
+                throw new Exception('Mux upload failed. HTTP ' . $status_code);
+            }
+
+            // ✅ Success
+            wp_send_json_success([
+                'message'   => 'Video uploaded successfully to Mux!',
+                'upload_id' => $body['data']['id'] ?? '',
+                'assetData' => $body['data'],
+            ]);
+
+        } catch (Exception $e) {
+            wp_send_json_error([
+                'message' => $e->getMessage(),
+            ]);
+        }
     }
 }
